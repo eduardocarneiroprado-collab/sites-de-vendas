@@ -3,42 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Loja de vendas online">
-    <title>Loja de Vendas</title>
+    <title>Venda de Tijolos</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Bem-vindo à nossa Loja de Vendas</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Produtos</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
-        </nav>
+        <h1>Loja de Tijolos</h1>
+        <p>Compre seus tijolos de forma fácil e rápida!</p>
     </header>
 
-    <section class="produtos">
-        <h2>Produtos em Destaque</h2>
+    <section id="produtos">
         <div class="produto">
-            <img src="https://via.placeholder.com/200" alt="Produto 1">
-            <h3>Produto 1</h3>
-            <p>R$ 99,99</p>
-            <button>Adicionar ao Carrinho</button>
+            <img src="https://via.placeholder.com/150" alt="Tijolo 1">
+            <h3>Tijolo Vermelho</h3>
+            <p>R$ 0,50 por unidade</p>
+            <button onclick="adicionarCarrinho('Tijolo Vermelho', 0.5)">Adicionar ao Carrinho</button>
         </div>
         <div class="produto">
-            <img src="https://via.placeholder.com/200" alt="Produto 2">
-            <h3>Produto 2</h3>
-            <p>R$ 149,99</p>
-            <button>Adicionar ao Carrinho</button>
+            <img src="https://via.placeholder.com/150" alt="Tijolo 2">
+            <h3>Tijolo Branco</h3>
+            <p>R$ 0,60 por unidade</p>
+            <button onclick="adicionarCarrinho('Tijolo Branco', 0.6)">Adicionar ao Carrinho</button>
         </div>
-        <!-- Adicione mais produtos aqui -->
     </section>
 
     <footer>
-        <p>&copy; 2025 Loja de Vendas. Todos os direitos reservados.</p>
+        <p>&copy; 2025 Loja de Tijolos. Todos os direitos reservados.</p>
     </footer>
 
     <script src="script.js"></script>
