@@ -11,7 +11,7 @@ body {
 }
 
 header {
-    background-color: #ff6f61;
+    background-color: #ff7b00;
     color: white;
     text-align: center;
     padding: 20px;
@@ -48,7 +48,8 @@ section#produtos {
 }
 
 button {
-    background-color: #ff6f61;
+    background-color: #ff7b00;
+    background-color:
     color: white;
     border: none;
     padding: 10px;
