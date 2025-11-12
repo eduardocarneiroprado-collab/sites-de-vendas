@@ -73,3 +73,81 @@ function finalizarCompra() {
     carrinho = [];
     atualizarCarrinho();
 }
+// Observa o clique do botão "Finalizar Compra" e mostra a frase ao lado
+document.addEventListener('DOMContentLoaded', () => {
+    const observer = new MutationObserver(() => {
+        const botao = document.getElementById('finalizar');
+        if (botao && !document.getElementById('mensagem-final')) {
+            const span = document.createElement('span');
+            span.id = 'mensagem-final';
+            span.style.marginLeft = '10px';
+            span.style.fontWeight = 'bold';
+            span.style.color = 'green';
+            botao.insertAdjacentElement('afterend', span);
+
+            botao.addEventListener('click', () => {
+                // Se o carrinho estiver vazio, não mostra mensagem
+                if (carrinho.length === 0) return;
+                
+                span.textContent = '✅ Compra finalizada com sucesso!';
+            });
+        }
+    });
+
+    // Observa mudanças no body (para pegar quando o botão for criado dinamicamente)
+    observer.observe(document.body, { childList: true, subtree: true });
+});
+// Exibe mensagem de compra finalizada ao lado do botão
+document.addEventListener('click', function (e) {
+    if (e.target && e.target.id === 'finalizar') {
+        // Espera o alerta terminar (pois ele vem antes no seu código)
+        setTimeout(() => {
+            const botao = document.getElementById('finalizar');
+            if (!botao) return;
+
+            // Cria a mensagem se ainda não existir
+            let mensagem = document.getElementById('mensagem-final');
+            if (!mensagem) {
+                mensagem = document.createElement('span');
+                mensagem.id = 'mensagem-final';
+                mensagem.style.marginLeft = '10px';
+                mensagem.style.fontWeight = 'bold';
+                mensagem.style.color = 'green';
+                botao.insertAdjacentElement('afterend', mensagem);
+            }
+
+            // Atualiza o texto da mensagem
+            mensagem.textContent = '✅ Compra finalizada com sucesso!';
+        }, 100); // pequeno atraso pra garantir que o carrinho atualize
+    }
+});
+// Exibe mensagem de compra finalizada ao lado do botão
+document.addEventListener('click', function (e) {
+    if (e.target && e.target.id === 'finalizar') {
+        // Espera o alerta terminar (pois ele vem antes no seu código)
+        setTimeout(() => {
+            const botao = document.getElementById('finalizar');
+            if (!botao) return;
+
+            // Cria a mensagem se ainda não existir
+            let mensagem = document.getElementById('mensagem-final');
+            if (!mensagem) {
+                mensagem = document.createElement('span');
+                mensagem.id = 'mensagem-final';
+                mensagem.style.marginLeft = '10px';
+                mensagem.style.fontWeight = 'bold';
+                mensagem.style.color = 'green';
+                botao.insertAdjacentElement('afterend', mensagem);
+            }
+
+            // Mostra a mensagem
+            mensagem.textContent = '✅ Compra finalizada com sucesso!';
+
+            // Faz a mensagem sumir depois de 4 segundos
+            setTimeout(() => {
+                mensagem.textContent = '';
+            }, 4000);
+        }, 100); // pequeno atraso pra garantir que o carrinho atualize
+    }
+});
+
